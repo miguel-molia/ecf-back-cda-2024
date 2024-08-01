@@ -46,8 +46,10 @@ CREATE TABLE commandes (
     dateCommande TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     montantTotal FLOAT,
     clientId INT,
+    isValidated BOOLEAN DEFAULT FALSE,
     FOREIGN KEY (clientId) REFERENCES clients(id)
 );
+
 
 -- Table des articles dans les commandes (panier)
 CREATE TABLE commandeArticles (
